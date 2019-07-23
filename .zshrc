@@ -154,3 +154,9 @@ bindkey '^[[B' history-substring-search-down
 
 # Managing dotfiles with git
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# VTE configuration for Tilix from: https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+

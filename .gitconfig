@@ -1,3 +1,5 @@
 [user]
 	email = julia@juliaebert.com
 	name = Julia Ebert
+[pager]
+	branch = false

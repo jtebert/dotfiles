@@ -1,6 +1,6 @@
 {
     "background-color": "#263138",
-    "badge-color": "#FFFFFF",
+    "badge-color": "#AC7EA8",
     "bold-color": "#FFFFFF",
     "comment": "",
     "cursor-background-color": "#000000",
@@ -31,5 +31,5 @@
     "use-bold-color": false,
     "use-cursor-color": false,
     "use-highlight-color": false,
-    "use-theme-colors": false
+    "use-theme-colors": true
 }

@@ -157,6 +157,8 @@ alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rr='if [ -f /var/run/reboot-required ]; then echo "reboot required"; else echo "No reboot needed"; fi'
 alias lc='colorls'
+alias open='xdg-open'
+alias ip='curl icanhazip.com'
 
 ## Past search history
 bindkey '^[[A' history-substring-search-up

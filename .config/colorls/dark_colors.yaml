@@ -46,7 +46,7 @@
 #===============================================================================
 
 # Main Colors
-unrecognized_file: lightgray
+unrecognized_file: gray
 recognized_file:   white
 dir:               blue
 

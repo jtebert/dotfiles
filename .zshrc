@@ -159,6 +159,7 @@ alias rr='if [ -f /var/run/reboot-required ]; then echo "reboot required"; else 
 alias lc='colorls'
 alias open='xdg-open'
 alias ip='curl icanhazip.com'
+alias please='sudo $(fc -ln -1)'
 
 ## Past search history
 bindkey '^[[A' history-substring-search-up

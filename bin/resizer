@@ -4,6 +4,21 @@
 # INPUTS: input_files width output/path
 # EXAMPLE: resizer "photos/*.jpg" 1920 "photos/compressed"
 
+# Check inputs
+
+if [ -z "$1" ] ; then
+    echo "ERROR: Specify the source files in the first argument (e.g. \"photos/*.jpg\")"
+    exit 1
+fi
+if [ -z "$2" ] ; then
+    echo "ERROR: Specify the output width resolution in the second argument (e.g. 1920)"
+    exit 1
+fi
+if [ -z "$3" ] ; then
+    echo "ERROR: Specify the output destination in third argument (e.g. \"photos/compressed\")"
+    exit 1
+fi
+
 mkdir -p $3
 
 mogrify -path $3 -filter Triangle -define filter:support=2 -resize $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1

@@ -176,7 +176,8 @@ alias lc='colorls'
 alias open='xdg-open'
 alias ip='curl icanhazip.com'
 alias please='sudo $(fc -ln -1)'
-alias dh='du -h -d1 | sort -n'
+alias dh='du -ah -d1 | sort -n'
+alias am='find . -type f -exec stat \{\} --printf="%y\n" \; |                                                                                                                                  10:11:34  sort -n -r | head -n 1'
 
 ## Past search history
 bindkey '^[[A' history-substring-search-up

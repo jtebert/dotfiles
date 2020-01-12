@@ -1,0 +1,5 @@
+#!/bin/bash
+
+milcel=$(cat /sys/class/thermal/thermal_zone0/temp)
+ctemp=$(echo "scale=0;$milcel/1000" | bc)
+echo $ctemp"°C"

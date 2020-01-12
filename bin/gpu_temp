@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cel=$(/opt/vc/bin/vcgencmd measure_temp | sed "s/'C//g" | sed "s/temp=//g")
+ctemp=$(echo "scale=0;$cel/1" | bc)
+
+echo $ctemp"°C"

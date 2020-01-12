@@ -2,13 +2,18 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jtebert/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+BASE_COLOR="cyan"
+BASE_TEXT_COLOR="black"
+
+POWERLEVEL9K_OS_ICON_BACKGROUND='grey'
 
 POWERLEVEL9K_MODE="nerdfont-complete"
 #POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
@@ -17,8 +22,19 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 #POWERLEVEL9K_MULTILINE_LAST
 POWERLEVEL9K_LINUX_UBUNTU_ICON="\uf31b "
 
-BASE_COLOR="cyan"
-BASE_TEXT_COLOR="black"
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    if [[ $ID == 'raspbian' ]]; then
+        POWERLEVEL9K_LINUX_ICON='\uf315 '
+        BASE_COLOR='red' #
+        #POWERLEVEL9K_OS_ICON_FOREGROUND='white' # 007
+    elif [[ $ID == 'centos' || $ID == 'redhat' ]]; then
+        OS_ICON='\uF309' # 
+        POWERLEVEL9K_OS_ICON_BACKGROUND='000' # black
+        POWERLEVEL9K_OS_ICON_FOREGROUND='red' # 001
+    fi
+fi
 
 # LEFT SIDE
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline ssh os_icon)
@@ -51,7 +67,6 @@ POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
 POWERLEVEL9K_VCS_BRANCH_ICON='\ue0a0 '
 #POWERLEVEL9K_HIDE_BRANCH_ICON=true
 
-POWERLEVEL9K_OS_ICON_BACKGROUND='grey'
 POWERLEVEL9K_OS_ICON_FOREGROUND='white'
 POWERLEVEL9K_HOST_LOCAL_FOREGROUND="white"
 POWERLEVEL9K_HOST_REMOTE_FOREGROUND="cyan"

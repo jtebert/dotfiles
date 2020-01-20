@@ -36,6 +36,10 @@ if [ -f /etc/os-release ]; then
     fi
 fi
 
+if [[ $HOST == gnathosaurus ]]; then
+    BASE_COLOR='green'
+fi
+
 # LEFT SIDE
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline ssh os_icon)
 

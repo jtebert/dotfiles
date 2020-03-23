@@ -44,7 +44,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 if [[ $HOST == gnathosaurus ]]; then
-    BASE_COLOR='green'
+    BASE_COLOR='yellow'
 fi
 
 # LEFT SIDE

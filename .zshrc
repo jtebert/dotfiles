@@ -44,7 +44,9 @@ if [ -f /etc/os-release ]; then
 fi
 
 if [[ $HOST == gnathosaurus ]]; then
-    BASE_COLOR='yellow'
+    BASE_COLOR='magenta'
+    BASE_TEXT_COLOR='white'
+    POWERLEVEL9K_LINUX_ICON='\ufba7 '
 fi
 
 # LEFT SIDE
@@ -204,6 +206,7 @@ alias ip='curl icanhazip.com'
 alias please='sudo $(fc -ln -1)'
 alias dh='du -ah -d1 | sort -n'
 alias am='find . -type f -exec stat \{\} --printf="%y\n" \; |                                                                                                                                  10:11:34  sort -n -r | head -n 1'
+alias venvhere='source venv/bin/activate'
 
 ## Past search history
 bindkey '^[[A' history-substring-search-up
@@ -224,3 +227,6 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# added by travis gem
+[ -f /home/jtebert/.travis/travis.sh ] && source /home/jtebert/.travis/travis.sh

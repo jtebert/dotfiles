@@ -1,5 +1,8 @@
 #!/bin/python3
 
+# NOTE: This uses the `ffmpeg-python` library (here: https://kkroening.github.io/ffmpeg-python/).
+# This is different from alternatives available on pypi/pip: ffmpeg or python-ffmpeg.
+
 import glob
 import argparse
 import os
@@ -24,6 +27,9 @@ def compress(in_file, args):
         stream = stream.setpts('PTS-STARTPTS')
     # Set to the specified resolution
     stream = stream.filter('scale', args.width, -1)
+    # Speed up (possibly)
+    if args.speed:
+        stream = stream.setpts(f'{1/args.speed}*PTS')
 
     # Set output to have the right formats
     stream = ffmpeg.output(stream, out_filename, vcodec='h264', pix_fmt='yuv420p')
@@ -45,6 +51,9 @@ if __name__ == "__main__":
                         help='end time for trimming video (optional)')
     parser.add_argument('--overwrite', action='store_true',
                         help='whether to overwrite existing outputs (optional, default is False)')
+    parser.add_argument('--speed',
+                        type=float,
+                        help='scale of how much to speed up/slow down the video (optional)')
 
     args = parser.parse_args()
 

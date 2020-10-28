@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 
 # NOTE: This uses the `ffmpeg-python` library (here: https://kkroening.github.io/ffmpeg-python/).
 # This is different from alternatives available on pypi/pip: ffmpeg or python-ffmpeg.

@@ -44,8 +44,8 @@ if [ -f /etc/os-release ]; then
 fi
 
 if [[ $HOST == gnathosaurus ]]; then
-    BASE_COLOR='green'
-    BASE_TEXT_COLOR='black'
+    BASE_COLOR='cyan'
+    BASE_TEXT_COLOR='white'
     POWERLEVEL9K_LINUX_ICON='\ufba7 '
 fi
 
@@ -170,7 +170,7 @@ POWERLEVEL9K_TIME_ICON=''
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract z history-substring-search)
+plugins=(git extract z history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -225,6 +225,9 @@ fi
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
+
+# Add VS Code to path because it just seems to be in a stupid non-standard location???
+export PATH="/usr/share/code:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -4,6 +4,22 @@ User dotfiles for cross-machine compatibility and backup.
 
 This approach comes from [this blog post](https://www.anand-iyer.com/blog/2018/a-simpler-way-to-manage-your-dotfiles.html) by Anand Iyer.
 
+## Recent Changes
+
+The default branch has been changed from `master` to `main`. If you try to pull, it will fail.
+
+To update your local setup accordingly, do the following:
+
+```shell
+git checkout master         # Switch to local master branch
+git branch -m master main   # Rename the branch to main
+git fetch                   # git latest commits and branches
+git branch --unset-upstream # Remove tracking connection to origin/master
+git branch -u origin/main   # Make new tracking connection to origin/main
+```
+
+Source: [Tower](https://www.git-tower.com/learn/git/faq/git-rename-master-to-main/)
+
 ## Notes
 
 - This is set up for [ZSH](https://www.zsh.org/). In particular, I use the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme (installed through https://ohmyz.sh/).

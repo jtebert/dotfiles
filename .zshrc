@@ -244,3 +244,8 @@ export PATH="/usr/share/code:$PATH"
 
 # added by travis gem
 [ -f /home/jtebert/.travis/travis.sh ] && source /home/jtebert/.travis/travis.sh
+
+# Outrider pip/outdocker configuration
+export PATH=$PATH:$HOME/.local/bin
+
+export PATH=$PATH:/home/jebert/.spicetify

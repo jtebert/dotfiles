@@ -48,10 +48,11 @@ if [[ $HOST == gnathosaurus ]]; then
     BASE_COLOR='cyan'
     BASE_TEXT_COLOR='white'
     POWERLEVEL9K_LINUX_ICON='\ufba7 '
-elif [[ $HOST == tupuxuara ]]; then
-    # Lab desktop
+elif [ -f /.dockerenv ]; then
+    # In a docker container
     BASE_COLOR='blue'
     BASE_TEXT_COLOR='white'
+    POWERLEVEL9K_LINUX_ICON='\uf0833 '
 fi
 
 # LEFT SIDE
@@ -79,7 +80,7 @@ POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=""
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
 POWERLEVEL9K_HOME_ICON='\uf015 '
 POWERLEVEL9K_HOME_SUB_ICON='\uf015'
-POWERLEVEL9K_FOLDER_ICON='\uf74a'
+POWERLEVEL9K_FOLDER_ICON='\ue5ff'
 
 #POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uF408'
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
